@@ -1,0 +1,11 @@
+web:
+    build: .
+    volumes:
+        - "src:/srv/www" # override the built folder for development
+        - "/dev/log:/dev/log" # expose logging socket
+#    links:
+#        - db
+    ports:
+        - "80:8000"
+#db:
+#    image: postgres
