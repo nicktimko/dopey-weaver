@@ -1,0 +1,12 @@
+app:
+    build: webapp
+    volumes:
+        - "webapp/src:/srv/www" # override the built folder for development
+        - "/dev/log:/dev/log" # expose logging socket
+    links:
+        - "db:db"
+    ports:
+        - "80:8000"
+
+db:
+    build: webdb

@@ -1,7 +1,8 @@
-FROM python:3.4-slim
+FROM python:3.4
+
+RUN apt-get install libpq-dev
 
 RUN pip install --upgrade pip --disable-pip-version-check
-
 ADD src /srv/www
 
 WORKDIR /srv/www
