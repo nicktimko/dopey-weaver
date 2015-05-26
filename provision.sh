@@ -28,8 +28,8 @@ eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
 EOF
 
-su - vagrant -c "$HOME/.pyenv/bin/pyenv install 3.4.3"
-su - vagrant -c "$HOME/.pyenv/bin/pyenv install 2.7.9"
+su - vagrant -c '$HOME/.pyenv/bin/pyenv install 3.4.3'
+su - vagrant -c '$HOME/.pyenv/bin/pyenv install 2.7.9'
 
 # Quality of life
 # blue dir color on blue-ish PowerShell background is impossible
