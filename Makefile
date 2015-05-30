@@ -1,13 +1,9 @@
-NAME = mywebapp
+build:
+	docker-compose build
 
-HOSTPORT = 8080
-CONTAINERPORT = 5000
+up:
+	docker-compose up
 
-buildapp:
-	docker build -t webapp webapp
+syncdb:
+	docker-compose run app python manage.py syncdb
 
-runapp:
-	docker run --name=$(NAME) -i -t webapp python manage.py runserver 0.0.0.0:8000
-
-rmapp:
-	docker rm $(NAME)
