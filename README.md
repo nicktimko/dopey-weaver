@@ -23,6 +23,14 @@
 **Do**cker, **Py**thon, **Wi**ndows, **Va**grant...dopy,
 wiva...dopey...whatever. Who are you, Comrade Questions?
 
+## Running
+
+Build and run a Vagrant machine using `vagrant up` from a command line at the
+project root, then connecting via `vagrant ssh` (requires an `ssh` program
+on the path, see above).
+
+
+
 [virtbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/
 [gitscm]: https://git-scm.herokuapp.com/
