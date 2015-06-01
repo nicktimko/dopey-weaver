@@ -1,9 +1,19 @@
+dbdata:
+    image: postgres:9.4
+    command: /bin/true
+    volumes:
+        - "/var/lib/postgresql"
+
 db:
-    image: postgres
+    build: wdb
+    volumes_from:
+        - dbdata
+    ports:
+        - "5432:5432"
 
 app:
     build: wapp
-    command: python manage.py runserver 0.0.0.0:8000
+    command: "python manage.py runserver 0.0.0.0:8000"
     volumes:
         - "wapp/src:/srv/www"
     ports:

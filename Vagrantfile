@@ -69,8 +69,14 @@ Vagrant.configure(2) do |config|
   # config.vm.provision "shell", inline: <<-SHELL
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
-  # SHELL
-  config.vm.provision "shell", path: "provision.sh"
+  #config.vm.provision "file", source: "qol/dir_colors", destination: "/root/.dir_colors"
+  config.vm.provision "file", source: "qol/dir_colors", destination: "/home/vagrant/.dir_colors"
+  #config.vm.provision "file", source: "qol/bash_aliases.sh", destination: "/root/.bash_aliases"
+  config.vm.provision "file", source: "qol/bash_aliases.sh", destination: "/home/vagrant/.bash_aliases"
+  #config.vm.provision "file", source: "qol/bash_profile.sh", destination: "/root/.bashrc"
+  config.vm.provision "file", source: "qol/bash_profile.sh", destination: "/home/vagrant/.bashrc"
+
+  config.vm.provision "shell", path: "qol/provision.sh"
 
   # is not a tty...https://github.com/mitchellh/vagrant/issues/1673
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"

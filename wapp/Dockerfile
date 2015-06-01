@@ -7,8 +7,8 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir -p /srv/www
 WORKDIR /srv/www
 
-ADD src/requirements.txt /srv/www/
+COPY src/requirements.txt /srv/www/
 
 RUN pip install -r requirements.txt
 
-ADD src /srv/www
+COPY src /srv/www
