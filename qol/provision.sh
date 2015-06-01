@@ -28,7 +28,5 @@ su - vagrant -c '$HOME/.pyenv/bin/pyenv install 2.7.10'
 
 # Quality of life
 # blue dir color on blue-ish PowerShell background is impossible
+# NOTE: only do this for root; user vagrant is dealt with in bash_profile.sh
 echo 'LS_COLORS=$LS_COLORS:"di=0;35:"' >> ~/.bashrc
-echo 'LS_COLORS=$LS_COLORS:"di=0;35:"' >> /home/vagrant/.bashrc
-# start where our code is
-echo 'cd /vagrant' >> /home/vagrant/.bashrc

@@ -174,8 +174,11 @@ fi
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [[ $- == *i* ]]
+then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # start in the usual folder of interest
 cd /vagrant
