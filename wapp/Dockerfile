@@ -2,13 +2,14 @@ FROM python:3.4
 ENV PYTHONUNBUFFERED 1
 
 #RUN apt-get install libpq-dev
-
 #RUN pip install --upgrade pip --disable-pip-version-check
+
 RUN mkdir -p /srv/www
+COPY src /srv/www
+COPY entrypoint.sh /bin/entrypoint
+
 WORKDIR /srv/www
-
-COPY src/requirements.txt /srv/www/
-
 RUN pip install -r requirements.txt
 
-COPY src /srv/www
+ENTRYPOINT ["entrypoint"]
+CMD ["dj", "--help"]

@@ -1,0 +1,7 @@
+- model: articles.Article
+  pk: 1
+  fields:
+    pub_date: "2015-06-02"
+    headline: "FIFA president resigns"
+    content: "Sepp Blatter resigns as president of FIFA after sweeping inditements"
+    author: "Scott Simon"
