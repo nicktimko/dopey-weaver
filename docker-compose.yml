@@ -6,7 +6,7 @@ dbdata:
         - "/var/lib/postgresql"
 
 # docker build --tag=wvdc_db wdb
-# docker run --detach --volumes-from=wvdc_dbdata_1 --name=wvdc_db_1 wvdc_wdb
+# docker run --detach --volumes-from=wvdc_dbdata_1 --publish=5432:5432 --name=wvdc_db_1 wvdc_db
 db:
     build: wdb
     volumes_from:
@@ -15,7 +15,7 @@ db:
         - "5432:5432" # for development access only
 
 # docker build --tag=wvdc_app wapp
-# docker run --detach --volume="wapp/src:/srv/www" --link=wvdc_db_1 --publish=8000:8000 --name=wvdc_app_1 wvdc_app dj runserver 0.0.0.0:8000
+# docker run --detach --volume="$(pwd)/wapp/src:/srv/www" --link=wvdc_db_1 --publish=8000:8000 --name=wvdc_app_1 wvdc_app dj runserver 0.0.0.0:8000
 app:
     build: wapp
     command: "dj runserver 0.0.0.0:8000"
