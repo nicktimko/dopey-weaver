@@ -1,11 +1,11 @@
 """
-Django settings for mysite project.
+Django settings for labweb project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
+https://docs.djangoproject.com/en/1.8/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
+https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 from os.path import abspath, dirname, join
@@ -15,10 +15,10 @@ PROJECT_ROOT = dirname(dirname(dirname(abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u^d^ggcm2&brxed3f=4dti5&8ia(xawwgfb+2@r4_d7-giw%ga'
+SECRET_KEY = '&^h2xgk@*&%n^940t7b45un2^d_07@8=g3-1+95rrp&0jb9r@g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,9 +74,12 @@ MIDDLEWARE_CLASSES = (
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
-WSGI_APPLICATION = 'mysite.wsgi.application'
+ROOT_URLCONF = 'labweb.urls'
+WSGI_APPLICATION = 'labweb.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -101,7 +104,7 @@ else:
     }
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
+# https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-gb'
 TIME_ZONE = 'UTC'
@@ -111,7 +114,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_ROOT = join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
@@ -126,14 +129,6 @@ MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
 
 
-# Django compressor settings
-# http://django-compressor.readthedocs.org/en/latest/settings/
-
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-)
-
-
 # Template configuration
 
 from django.conf import global_settings
@@ -145,10 +140,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 
 # Wagtail settings
 
-LOGIN_URL = 'wagtailadmin_login'
-LOGIN_REDIRECT_URL = 'wagtailadmin_home'
-
-WAGTAIL_SITE_NAME = "mysite"
+WAGTAIL_SITE_NAME = "labweb"
 
 # Use Elasticsearch as the search backend for extra performance and better search results:
 # http://wagtail.readthedocs.org/en/latest/howto/performance.html#search
@@ -157,7 +149,7 @@ WAGTAIL_SITE_NAME = "mysite"
 # WAGTAILSEARCH_BACKENDS = {
 #     'default': {
 #         'BACKEND': 'wagtail.wagtailsearch.backends.elasticsearch.ElasticSearch',
-#         'INDEX': 'mysite',
+#         'INDEX': 'labweb',
 #     },
 # }
 
